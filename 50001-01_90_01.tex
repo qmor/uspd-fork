@@ -1,0 +1,63 @@
+% !TeX spellcheck = ru_RU
+% !TeX encoding = UTF-8
+\documentclass[a4paper,12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lastpage}
+\usepackage[russian]{babel}
+\usepackage{uspd}
+\usepackage{ifthen}
+
+
+
+%variables
+\newboolean{needtableofcontents}
+\setboolean{needtableofcontents}{true}
+\newboolean{needmilitary}
+\setboolean{needmilitary}{true}
+\newcommand{\militarydep}{0101 ВП МО РФ}
+\newcommand{\militarydephead}{Ф.Рыкин}
+\newcommand{\docdecimalnumber}{ЕВИЛ.50001-01}
+\newcommand{\preparedby}{Д.Зыкин}
+\newcommand{\checkedby}{О.Мыкин}
+\newcommand{\developdep}{931}
+\newcommand{\developdephead}{В.Лютый}
+\newcommand{\programnameshort}{СПО ОВА}
+\newcommand{\programnamefull}{Специальное программное обеспечение обмена с внешними абонентами}
+\newcommand{\approvedby}{Заместитель генерального директора}
+\newcommand{\approvedbyname}{Б.Зеленый}
+%end of variables
+
+
+
+\begin{document}
+
+\sloppy
+\title{\programnamefull\\(\programnameshort)
+~\\
+Протоколы информационного обмена}
+
+\uspdabstract{Настоящий документ определяет протоколы информационного обмена (входные и выходные данные) \programnameshort.}
+
+
+\begin{uspd}{\docdecimalnumber~90~01}
+	
+\section{Общие положения}
+Входные и выходные данные для \programnameshort представлены в файлов, содержащих JavaScript Object Notation (JSON) объекты. Все файлы, используемые при информационном обмене должны иметь кодировку UTF-8. Подробное описание указанных файлов приводится в соответствующих разделах настоящего документа.
+\section{Входные данные}
+\subsection{Пользовательские данные}
+Пользовательские данные передаются в виде JPEG картинок
+\section{Выходные данные}
+\subsection{Пользовательские данные}
+Пользовательские данные также передаются в виде JPEG картинок
+
+
+\newpage
+\section*{Перечень сокращений}
+\begin{tabular}{p{17mm}cp{180mm}}	
+	ПК  & & - персональный компьютер \\
+	СПО & & - специальное программное обеспечение\\
+\end{tabular}
+\end{uspd}
+
+\end{document}
