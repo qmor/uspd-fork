@@ -1,15 +1,17 @@
 %% Copyright (c) Alexander V. Inyukhin, 2004.
-
+%%длинные листы утверждения http://guap.ru/guap/standart/kach/espd_19.001-19.781.pdf
 \usepackage{rotating}
 \usepackage{ifthen}
 \usepackage[singlelinecheck=false]{caption}%left aligment for tables captions
 
+\usepackage{etoolbox}
+\ifdef{\additionallapprove}{}{\newcommand{\additionallapprove}{}}
 
 \usepackage{sectsty}
 \sectionfont{\fontsize{12}{15}\selectfont\centering}
 \subsectionfont{\normalfont\fontsize{12}{15}\selectfont}
 \subsubsectionfont{\normalfont\selectfont}
-
+\usepackage{longtable}
 
 \graphicspath{ {images/} }
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
@@ -134,7 +136,7 @@
 \vskip 10mm
 
 % field 6, 
-\begin{tabular}{p{70mm}cp{70mm}}
+\begin{longtable}{p{70mm}cp{70mm}}
 %СОГЛАСОВАНО 
 %& & Пред\-ста\-ви\-те\-ли пред\-при\-я\-тия--раз\-ра\-бот\-чи\-ка ИПС РАН \\
 %& & \\
@@ -155,11 +157,11 @@
 & & \signfield\developdephead \\
 & & \datefield \\
 & & \\
-
+\additionallapprove
 \ifthenelse{\boolean{needmilitary}}{от \militarydep}{}     & & Нормоконтроль \\
 \ifthenelse{\boolean{needmilitary}}{\signfield{        }}{}& & \signfield{        } \\
 \ifthenelse{\boolean{needmilitary}}{\datefield}{}       & & \datefield \\
-\end{tabular}
+\end{longtable}
 
 % field 7, year
 \vfill
